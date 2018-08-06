@@ -16,6 +16,7 @@ It will generate four outputs into "dataset" folder, including two protein seque
 It will generate two output files with the sequence features for positive and negative samples into the "dataset" folder, named "ara_svm_input" and "neg_svm_input", respectively. These process will take four hours.
 
 Run nested cross-validation and results
+
 3. To run nested cross-validation scripts, run python script using following command in terminal:
 "python nest_cv.py"
 It will run the nested cross validation for the inner loop to select the best hyperparameters with the highest averaged accuracy in the inner loop, and using this combination to fit a model and make the prediction on the test set on the outer loop. It will generate five folders into "output" folder. Four "fold_n_acc" files contains the accuracy with each combination of parameters in the nth fold. "performance" contains the accuracy using the best hyperparameters in the nth outer loop testing set. Running this script will take around 3 to 4 hours. To run the smaller data set, please comment out the labeled lines in the "nested_cv.py" script (lines from 14 to 18 in the script) to test the code on the smaller data set including 100 positive samples and 100 negative samples.
